@@ -9,8 +9,8 @@ import Typography from "@mui/material/Typography";
 import jwt from "jsonwebtoken";
 import Grid from "@mui/material/Grid";
 import CardActions from "@mui/material/CardActions";
-import "./FlightCards.css"
-
+import "./FlightCards.css";
+//618c4aa2b6cdc043fe6825e3
 const FlightCards = (filter) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -37,68 +37,28 @@ const FlightCards = (filter) => {
 
   //console.log("filter is", filter.filter);
   return (
-    <div class = "cards-section">
-      {filter.filter.map((filters) => {
-        console.log(filters);
-        return (
-          <div className="col rcorners1">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{filters.actualName}</h5>
-                <p className="card-text">{filters.cardName}</p>
-                <p>Tokens in circulation {filters.tokensInCirculation}</p>
-                <p>Market Cap {filters.marketCap}</p>
-                <button onClick={handleOpen}>Buy Token</button>
-                <CardActions>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        width: 400,
-                        bgcolor: "background.paper",
-                        border: "2px solid #000",
-                        boxShadow: 24,
-                        p: 4,
-                      }}
-                    >
-                      <Typography
-                        id="modal-modal-title"
-                        variant="h6"
-                        component="h2"
-                      >
-                        Are you sure you want to Buy this token?
-                      </Typography>
-
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <Button
-                          size="small"
-                          onClick={() => {
-                            onBuy(filters._id);
-                            handleClose();
-                          }}
-                        >
-                          Buy
-                        </Button>
-                        <Button size="small" onClick={handleClose}>
-                          Go back
-                        </Button>
-                      </Typography>
-                    </Box>
-                  </Modal>
-                </CardActions>
-              </div>
+    <div class="cards-section">
+      {filter.filter.map((filters) => (
+        <div className="col rcorners1" key={filters._id}>
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{filters.actualName}</h5>
+              <p className="card-text">{filters.cardName}</p>
+              <p>Tokens in circulation {filters.tokensInCirculation}</p>
+              <p>Market Cap {filters.marketCap}</p>
+              <button
+                onClick={(e) => {
+                  console.log(e);
+                  onBuy(filters._id);
+                  handleClose();
+                }}
+              >
+                Buy Token
+              </button>
             </div>
           </div>
-        );
-      })}
+        </div>
+      ))}
       ;
     </div>
   );

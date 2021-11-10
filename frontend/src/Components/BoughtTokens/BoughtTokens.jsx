@@ -30,12 +30,9 @@ const BoughtTokens = () => {
         }
       )
       .then((response) => {
-        setFilteredCards(response.data[0].createdCards);
+        setFilteredCards(response.data[0].BoughtCards);
         console.log("resss");
-        console.log(
-          "response.data[0].createdCards :",
-          response.data[0].createdCards
-        );
+        console.log("response.data[0].BoughtCards :", response.data);
       })
       .catch((err) => {
         console.log(err);
