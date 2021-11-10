@@ -1,15 +1,9 @@
-
-.inputField{
-    margin-left: 500px;
-    margin-top: 100px;
+.register-container{
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
 }
 
-.label{ display: inline-block;
-        width: 100px;
-        text-align: right;
-        
-}
-.buttons{
-    margin-left:200px;
-    margin-top:25px;
+.register{
+    width: 100%;
 }

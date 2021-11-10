@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import jwt from "jsonwebtoken";
 import Grid from "@mui/material/Grid";
 import CardActions from "@mui/material/CardActions";
+import "./FlightCards.css"
 
 const FlightCards = (filter) => {
   const [open, setOpen] = React.useState(false);
@@ -36,15 +37,15 @@ const FlightCards = (filter) => {
 
   //console.log("filter is", filter.filter);
   return (
-    <div>
+    <div class = "cards-section">
       {filter.filter.map((filters) => {
         console.log(filters);
         return (
-          <div class="col rcorners1">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{filters.actualName}</h5>
-                <p class="card-text">{filters.cardName}</p>
+          <div className="col rcorners1">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{filters.actualName}</h5>
+                <p className="card-text">{filters.cardName}</p>
                 <p>Tokens in circulation {filters.tokensInCirculation}</p>
                 <p>Market Cap {filters.marketCap}</p>
                 <button onClick={handleOpen}>Buy Token</button>

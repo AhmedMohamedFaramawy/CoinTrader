@@ -1,34 +1,27 @@
-
-.inputField{
-    margin-left: 500px;
-    margin-top: 100px;
+.inputField input{
+    height: 3rem;
+    width: 20rem;
+    font-family: sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
 }
 
-.label{ display: inline-block;
-        width: 100px;
-        text-align: right;
-        
-}
-.field{
-    width: 300px;
-    height: 40px;
-}
-.buttons{
-    margin-left:5px;
-    margin-top:25px;
+.login-container{
+    display: grid;
+    place-items: center;
+    row-gap: 1rem;
 }
 
-.forgot{
-   margin-left:150px;
+.input-container{
+    display: grid;
+    row-gap: 0.5rem;
 }
 
-
-/*
-.loginPage{
-    max-width:500px;
-    margin: auto;
-    padding: 0 15px;
-    color: #444;
+.register:hover{
+    cursor: pointer;
+    color: rgb(95, 95, 211);
 }
-*/
 
+.login:hover{
+    color:rgb(255, 166, 0) ;
+}

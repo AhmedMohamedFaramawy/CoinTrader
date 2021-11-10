@@ -104,21 +104,23 @@ const Login = () => {
             */
   };
 
-  return (
-    <div>
-      <h1>Login</h1>
+  function goToRegister() {
+    history.push("/Register");
+ }
 
-      <form class="inputField" action="/Login" method="POST">
-        <div>
+  return (
+    <div className="login-container">
+      <form className="inputField" action="/Login" method="POST">
+        <div className="input-container">
           <InputField
             name="username"
             DataType="email"
             Data="Username"
-            placeholder="   Username"
+            placeholder="Username"
             onChange={handleChange}
             value={input.username}
           />
-          <br></br>
+          
           <InputField
             name="password"
             DataType="password"
@@ -127,25 +129,26 @@ const Login = () => {
             onChange={handleChange}
             value={input.password}
           />
-        </div>
 
         <button
           onClick={handleClick}
           type="submit"
-          class="buttons btn btn-dark"
+          className="login buttons btn btn-dark"
         >
           Login
         </button>
+        </div>
       </form>
+      <span className="register" onClick={goToRegister}>Create a new account</span>
       <button
-        class="loginbutton  btn btn-outline-dark btn-lg col-3"
+        className="loginbutton  btn btn-outline-dark btn-lg col-3"
         onClick={loginWithGoogle}
         type="submit"
       >
-        Continue with Google <i class="fab fa-google"></i>
+        Continue with Google <i className="fab fa-google"></i>
       </button>
-      <button class="registerbutton btn btn-outline-dark btn-lg col-3">
-        Continue with Apple <i class="fab fa-apple"></i>
+      <button className="registerbutton btn btn-outline-dark btn-lg col-3">
+        Continue with Apple <i className="fab fa-apple"></i>
       </button>
     </div>
   );

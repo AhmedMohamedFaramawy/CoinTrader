@@ -87,10 +87,10 @@ const Register = (props) => {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <h1>Register</h1>
 
-      <form class="inputField" action="/Register" method="POST">
+      <form className="register-container inputField" action="/Register" method="POST">
         <div>
           <InputField
             name="username"
@@ -101,7 +101,6 @@ const Register = (props) => {
             value={input.username}
           />
         </div>
-        <br></br>
         <div>
           <InputField
             name="password"
@@ -116,20 +115,11 @@ const Register = (props) => {
         <button
           onClick={handleClick}
           type="submit"
-          class="buttons btn btn-dark"
+          class="register buttons btn btn-dark"
         >
           Register
         </button>
       </form>
-      <button
-        class="loginbutton  btn btn-outline-dark btn-lg col-3"
-        href="/auth/google"
-      >
-        Continue with Google <i class="fab fa-google"></i>
-      </button>
-      <button class="registerbutton btn btn-outline-dark btn-lg col-3">
-        Continue with Apple <i class="fab fa-apple"></i>
-      </button>
     </div>
   );
 };

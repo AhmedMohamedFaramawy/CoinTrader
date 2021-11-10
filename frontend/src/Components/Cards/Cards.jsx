@@ -38,7 +38,7 @@ const Cards = (filter) => {
   };
 
   return (
-    <div>
+    <div className = "cards-section">
       <div className="col rcorners1">
         <div className="card">
           <img src={filter.img} className="card-img-top img" alt="..." />

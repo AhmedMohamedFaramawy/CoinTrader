@@ -4,7 +4,6 @@ import "../Register/Register.css";
 const InputField = (props) => {
    return(
         <div class="form-group"   data-testid="inputfield" title="inputfield">
-            <label class="label" for={props.DataType}>{props.Data}</label>
             <input  class="field" title="label"
             type={props.DataType} 
             name={props.name}
