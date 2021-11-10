@@ -1,15 +1,25 @@
+#Project Name & Pitch
+
+CoinTrader
+
+CoinTrader is an application that allows you to Create & Buy Tokens(coins),
+its built with React, JavaScript, Express, and MongoDB.
+
+#Project Status
+
+This project is currently in development. Users can Register & Login (with JWT Authentication).
+Users can Create (and Filter & Search) for the required tokens.
+Google Login API is near Completion.
+
 # To - Dos
 
 ## Functional:
 
 Search:
-- [x] Search filters for categories     // typeError: Converting circular structure to JSON
 
+- [x] Search filters for categories // typeError: Converting circular structure to JSON
 
-//HUGE PROBLEM AT CreateToken.jsx as (const tokens = jwt.verify(localStorage.getItem('token'), "adafgjs7ng7dk7s6ng5kf5s1nbk8sf7n8dk9sn9s2fgad");)  The secret is not from the env file
-Authentication:
-
-//chec navbar.jsx line 14  what is the res value
+//chec navbar.jsx line 14 what is the res value
 
 // add an emviromental file for the frontend
 
@@ -17,43 +27,47 @@ Authentication:
 - [x] check email (correct email regex)
 - [x] Protected Route
 - [x] Passwords hashing & salting
-- [ ] JWT Session Token
-    - [ ] Logout
+- [x] JWT Session Token
+  - [x] Logout
 
 Google:
-- [ ] Google Signin API     //No error given but still not working
+
+- [ ] Google Signin API //No error given but still not working
 
 Tokens:
+
 - [x] Create token with query parameters
-    - [x] Check first if user exists
+  - [x] Check first if user exists
 
 ## Small touches
-- [x] front-end directory &  structure
-- [x] landing home page 
+
+- [x] front-end directory & structure
+- [x] landing home page
 - [x] existing user error handling on register //Done but check the if its correct
 - [x] mainpage in navbar (cant understand this one?)
 
 ## Non functional but important
 
 Cleanup:
-- [x] Adjust messages 
+
+- [x] Adjust messages
 - [x] Remove exccessive comments
 - [ ] No files bigger than 120 lines of code
-- [ ] Setup ESLint & Webpack                        //before last step
+- [ ] Setup ESLint & Webpack //before last step
 - [ ] Write 5 unit tests for 5 components (using Jest) //before last step
 - [ ] Remove excess code (such as views)
 - [x] use Express router correctly Or app.get (split into different files)
 - [x] All arrow functions (ES6 sytnax)
-- [ ] Error handling & HTTP error status codes for all endpoints      // next step to work on
-- [ ] Look into Swagger / endpoint documentation creation             // next step to work on
+- [ ] Error handling & HTTP error status codes for all endpoints
+- [x] Look into Swagger / endpoint documentation creation
 
-Deployment:  last steps
+Deployment: last steps
+
 - [ ] AWS (if no card required)
-    - [ ] Microsoft Azure
+  - [ ] Microsoft Azure
 - [ ] Deploy Backend
 - [ ] Deploy Frontend
 - [ ] Environment variables
-
 
 # Getting Started with Create React App
 

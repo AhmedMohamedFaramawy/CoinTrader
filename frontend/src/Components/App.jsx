@@ -14,6 +14,8 @@ import CreateToken from "./CreateToken/CreateToken";
 import UserTokens from "./UserTokens/UserTokens";
 import ResetPassword from "./ResetPassword/ResetPassword";
 import ProtectedRoute from "./protectedRoute/protectedRoute";
+import BoughtTokens from "./BoughtTokens/BoughtTokens";
+import BuyTokens from "./BuyTokens/BuyTokens";
 //import authenticateToken from "./backend/routes/authenticateToken";
 //import jwt from "jsonwebtoken";
 
@@ -36,6 +38,8 @@ return(
         <Route path="/Login"  component={Login} />
         <Route path="/Register"  component={Register} />
         <Route path="/Downloads" component={Downloads} />
+        <Route path="/BoughtTokens" component={BoughtTokens} />
+        <Route path={"/BuyTokens"} component={BuyTokens} />
         <ProtectedRoute path="/MainPage" component={MainPage} />
         <ProtectedRoute path="/Contacts" component={Contacts} />
         <ProtectedRoute path="/Main" component={Main} />
@@ -43,6 +47,7 @@ return(
         <ProtectedRoute path="/UserTokens" component={UserTokens} />
         <ProtectedRoute path="/Help" component={Help}/>
         <ProtectedRoute path="/ResetPassword" component={ResetPassword} />
+        
 
            
      </Switch>

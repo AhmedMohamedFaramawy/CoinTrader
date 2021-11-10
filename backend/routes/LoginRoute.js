@@ -2,46 +2,46 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 const passport = require("passport");
-const {createStrategy}  =  require("passport-local-mongoose");  //check this line
-const localStrategy  = require("passport-local").Strategy;
+const { createStrategy } = require("passport-local-mongoose"); //check this line
+const localStrategy = require("passport-local").Strategy;
 
 const jwt = require("jsonwebtoken");
 
+require("dotenv").config();
 
-require('dotenv').config();
-
-router.get("", async (req,res) => {
-
+router.get("", async (req, res) => {
   console.log("password is:", req.query.password);
-    const username = req.query.username;
-    const password = req.query.password;
+  const username = req.query.username;
+  const password = req.query.password;
 
-    const newUser = {
-        username: username,
-        password: password,
-    }   
+  const newUser = {
+    username: username,
+    password: password,
+  };
 
-    console.log("username :", username);
-    console.log("password :", password);
+  console.log("username :", username);
+  console.log("password :", password);
 
-    await User.findOne({username: username , password: password})
+  await User.findOne({ username: username, password: password })
     .then((result) => {
-            console.log("User Found", result);
-            if(result !== null){
-                const accessToken = jwt.sign(newUser, process.env.ACCESS_TOKEN_SECRET)
-                console.log("accessTokenss : " , accessToken);
+      console.log("User Found", result);
+      if (result !== null) {
+        const accessToken = jwt.sign(newUser, process.env.ACCESS_TOKEN_SECRET);
+        console.log("accessTokenss : ", accessToken);
 
-                res.json({ 
-                    username: username,
-                    password: password,
-                    accessToken: accessToken});
-            }  else {
-                res.status(400).json("username not found");
-            }
-        }).catch((err) => {
-            console.log("user not found", err);
-            res.send(err);
-        })  
+        res.json({
+          username: username,
+          password: password,
+          accessToken: accessToken,
+        });
+      } else {
+        res.status(400).json("username not found");
+      }
+    })
+    .catch((err) => {
+      console.log("user not found", err);
+      res.send(err);
+    });
 });
 
 /*

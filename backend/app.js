@@ -83,7 +83,7 @@ app.use("/ResetPassword", require("./routes/ResetPasswordRoute"));
 app.use("/FilterTokens", require("./routes/FilterTokensRoute"));
 app.use("/UserTokens", require("./routes/UserTokensRoute"));
 app.use("/FilterUserTokens", require("./routes/FilterUserTokensRoute"));
-
+app.use("/BoughtTokens", require("./routes/BoughtTokensRoute"));
 
 app.listen(5000, () => {
     console.log("Server is Running on port 5000");

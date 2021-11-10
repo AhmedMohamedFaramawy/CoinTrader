@@ -16,7 +16,12 @@ const Main = (props) => {
      const checkTokens = () => {
         props.history.push ("/MainPage");
     };
-
+    const BuyTokens = () => {
+        props.history.push("/BuyTokens");
+    };
+    const checkBoughtTokens = () => {
+        props.history.push("BoughtTokens")
+    };
 
     return(
     <div>    
@@ -31,6 +36,14 @@ const Main = (props) => {
         <div>
             <h1>Check Top Tokens </h1>
             <button onClick={checkTokens}>Check Now</button>
+        </div>
+        <div>
+            <h1>Buy Top Tokens Now</h1>
+            <button onClick={BuyTokens}>Buy Tokens</button>
+        </div>
+        <div>
+            <h1>Check Token you Bought</h1>
+            <button onClick={checkBoughtTokens}>Check Bought Tokens</button>
         </div>
 
     </div>    

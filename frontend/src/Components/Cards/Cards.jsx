@@ -12,6 +12,7 @@ import "./Cards.css";
                         <p class="card-text">{props.playerName}</p>
                         <p>Tokens in circulation {props.Tokens}</p>
                         <p>Market Cap {props.Cap}</p>
+                        <button onClick={props.Buy}>Buy Token</button>
                     </div>
                 </div>
             </div>
