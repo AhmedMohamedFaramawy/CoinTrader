@@ -2,23 +2,22 @@ import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-    
-
 const Navbar = () => {
-
   const history = useHistory();
 
   const handleLogout = () => {
-    const res = axios.get("http://localhost:5000/Logout", {headers:{authorization:"Bearer "+localStorage.getItem("token")}});
+    const res = axios.get("http://localhost:5000/Logout", {
+      headers: { authorization: "Bearer " + localStorage.getItem("token") },
+    });
 
-    if(res){ // check this 
+    if (res) {
+      // check this
       console.log("res.ok :", res.ok);
       localStorage.removeItem("token");
       history.push("/");
     } else {
       history.push("/");
     }
-    
   };
 
   return (
@@ -51,6 +50,11 @@ const Navbar = () => {
                   Download
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/ResetPassword">
+                  Reset Password
+                </a>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -59,9 +63,7 @@ const Navbar = () => {
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
-                >
-                  Dropdown
-                </a>
+                ></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
                     <a class="dropdown-item" href="/Contacts">
@@ -77,17 +79,18 @@ const Navbar = () => {
                     <hr class="dropdown-divider" />
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <a class="dropdown-item" href="#"></a>
                   </li>
                 </ul>
               </li>
             </ul>
-            <button onClick={handleLogout} class="btn btn-outline-success" type="submit">
+            <button
+              onClick={handleLogout}
+              class="btn btn-outline-success"
+              type="submit"
+            >
               LogOut
             </button>
-          
           </div>
         </div>
       </nav>

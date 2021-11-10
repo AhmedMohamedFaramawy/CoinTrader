@@ -3,51 +3,55 @@ import InputField from "../InputField/InputField";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 
-require('dotenv').config();
+require("dotenv").config();
 
- const CreateToken = ()  => {
-
+const CreateToken = () => {
   const [input, setInput] = React.useState({
-    cardName: '',
-    actualName: '',
-    category: ''
-});
- 
-const handleChange = (event) => {
+    cardName: "",
+    actualName: "",
+    category: "",
+  });
+
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setInput(prevInput => {
-        return {
-            ...prevInput,
-            [name]: value
-        }
-    })
-};
+    setInput((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: value,
+      };
+    });
+  };
 
-const handleClick = (event) => {
+  const handleClick = (event) => {
     event.preventDefault();
     const newCard = {
-        cardName: input.cardName,
-        actualName: input.actualName,
-        category: input.category,
-    }
+      cardName: input.cardName,
+      actualName: input.actualName,
+      category: input.category,
+    };
 
-    console.log("the token value is:" ,localStorage.getItem('token'));
-    const tokens = jwt.verify(localStorage.getItem('token'), "adafgjs7ng7dk7s6ng5kf5s1nbk8sf7n8dk9sn9s2fgad");
+    console.log("the token value is:", localStorage.getItem("token"));
+    const tokens = jwt.verify(
+      localStorage.getItem("token"),
+      "adafgjs7ng7dk7s6ng5kf5s1nbk8sf7n8dk9sn9s2fgad"
+    );
     console.log("The LocalStorage token is :", tokens);
     const users = tokens.username;
     console.log(users);
 
-    axios.post("http://localhost:5000/CreateToken",
-    {
-     username: users, 
-     cardName: newCard.cardName,
-     actualName: newCard.actualName,
-     category: newCard.category,
-     JWTtoken: "Bearer "+localStorage.getItem("token"),
-      },{ headers:{authorization:"Bearer "+localStorage.getItem("token")}}
-  );
-};
+    axios.post(
+      "http://localhost:5000/CreateToken",
+      {
+        username: users,
+        cardName: newCard.cardName,
+        actualName: newCard.actualName,
+        category: newCard.category,
+        JWTtoken: "Bearer " + localStorage.getItem("token"),
+      },
+      { headers: { authorization: "Bearer " + localStorage.getItem("token") } }
+    );
+  };
 
   return (
     <div>
@@ -84,14 +88,18 @@ const handleClick = (event) => {
             value={input.category}
           />
         </div>
-        
 
-        <button onClick={handleClick} type="submit" class="buttons btn btn-dark"> CreateCard </button>
+        <button
+          onClick={handleClick}
+          type="submit"
+          class="buttons btn btn-dark"
+        >
+          {" "}
+          CreateCard{" "}
+        </button>
       </form>
     </div>
   );
-  
 };
-
 
 export default CreateToken;

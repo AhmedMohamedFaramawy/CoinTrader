@@ -5,7 +5,7 @@ module.exports.authenticateToken = (req, res, next) => {
 
   const authHeader = req.headers.authorization;
   const token = authHeader && authHeader.split(" ")[1];
-  console.log("Here is the  authHeader :", authHeader);
+  console.log("Heres is the  authHeader :", authHeader);
   console.log(token);
 
   if (token) {
