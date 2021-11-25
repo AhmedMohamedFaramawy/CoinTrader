@@ -14,7 +14,7 @@ module.exports = (passport) => {
       {
         clientID: process.env.CLIENT_ID,
         clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: process.env.CALL_BACK_URL, // The URL you will be directed to after loging in with google
+        callbackURL: process.env.CALL_BACK_URL, // The URL you will be directed to after clicking on loging in with google
       },
 
       async (accessToken, refreshToken, profile, cd) => {

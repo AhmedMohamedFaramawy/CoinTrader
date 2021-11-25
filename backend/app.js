@@ -96,6 +96,7 @@ app.use("/UserTokens", require("./routes/UserTokensRoute"));
 app.use("/FilterUserTokens", require("./routes/FilterUserTokensRoute"));
 app.use("/BoughtTokens", require("./routes/BoughtTokensRoute"));
 app.use("/BuyTokens", require("./routes/BuyTokensRoute"));
+//app.use("/getUserInfo", require("./routes/GetUserInfo"));
 
 app.listen(5000, () => {
   console.log("Server is Running on port 5000");

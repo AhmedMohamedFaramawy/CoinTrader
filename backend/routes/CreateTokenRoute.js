@@ -27,6 +27,7 @@ router.post("", authenticateToken, async (req, res) => {
   } else {
     const tokensInCirculation = 0;
     const marketCap = 0;
+    const price = 100;
     const newCard = new Card({
       username,
       cardName,
@@ -34,6 +35,7 @@ router.post("", authenticateToken, async (req, res) => {
       category,
       tokensInCirculation,
       marketCap,
+      price,
     });
 
     newCard.save();

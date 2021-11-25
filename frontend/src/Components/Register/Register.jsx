@@ -66,14 +66,14 @@ const Register = (props) => {
     };
 
     if (validateEmail(input.username) && input.password.length > 6) {
-      const result = axios
-        .post("http://localhost:5000/Register", newUser)
-        .then((res) => {
-          console.log(res.ok);
-          if (!res.ok) {
-            errorToast("🦄 UserName already Used", res);
-          }
-        });
+      axios.post("http://localhost:5000/Register", newUser).then((res) => {
+        if (res.data === null) {
+          console.log("Created User");
+          props.history.push("/Login");
+        } else if (res.data === "found") {
+          errorToast("🦄 UserName already Used", res.data);
+        }
+      });
     } else if (!validateEmail(input.username) && input.password.length > 6) {
       console.log("Your Email Form is Wrong");
       errorToast("🦄 Your Email Form is Wrong");
@@ -90,7 +90,11 @@ const Register = (props) => {
     <div className="register-container">
       <h1>Register</h1>
 
-      <form className="register-container inputField" action="/Register" method="POST">
+      <form
+        className="register-container inputField"
+        action="/Register"
+        method="POST"
+      >
         <div>
           <InputField
             name="username"

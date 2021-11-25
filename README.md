@@ -30,6 +30,17 @@ Search:
 - [x] JWT Session Token
   - [x] Logout
 
+New Points
+
+- [ ] Fix Google Login
+- [ ] Add Apple Login
+- [ ] Add User Profile Showing every thing
+- [x] Add Errors to Register and to go to login immediatly after successfull Register
+- [ ] Allow User to Buy using a Balance(Wallet)
+- [ ] Allow User to Sell to add to his Balance(Wallet)
+- [ ] Deploy Website
+- [ ] Add Stripe (Payment)
+
 Google:
 
 - [ ] Google Signin API //No error given but still not working

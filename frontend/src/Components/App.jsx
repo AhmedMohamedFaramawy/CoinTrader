@@ -16,6 +16,7 @@ import ResetPassword from "./ResetPassword/ResetPassword";
 import ProtectedRoute from "./protectedRoute/protectedRoute";
 import BoughtTokens from "./BoughtTokens/BoughtTokens";
 import BuyTokens from "./BuyTokens/BuyTokens";
+import Profile from "./Profile/Profile";
 //import authenticateToken from "./backend/routes/authenticateToken";
 //import jwt from "jsonwebtoken";
 
@@ -50,6 +51,8 @@ const App = () => {
 };
 
 export default App;
+
+//<Route path={"/Profile"} component={Profile} />
 
 //<Route path="/auth/google/Main" component={Main} />
 

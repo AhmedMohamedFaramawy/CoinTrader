@@ -14,6 +14,7 @@ router.post("", async (req, res) => {
   const newUser = new User({
     username: username,
     password: password,
+    balance: 1000,
   });
 
   await User.findOne({ username: username })
@@ -21,8 +22,10 @@ router.post("", async (req, res) => {
       if (result === null) {
         newUser.save();
         console.log("New User Created");
+        res.send("null");
       } else {
         console.log("username already exists");
+        res.send("found");
       }
     })
     .catch((err) => {

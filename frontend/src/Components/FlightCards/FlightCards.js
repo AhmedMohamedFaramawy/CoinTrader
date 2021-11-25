@@ -46,6 +46,7 @@ const FlightCards = (filter) => {
               <p className="card-text">{filters.cardName}</p>
               <p>Tokens in circulation {filters.tokensInCirculation}</p>
               <p>Market Cap {filters.marketCap}</p>
+              <p>Price {filters.price}</p>
               <button
                 onClick={(e) => {
                   console.log(e);

@@ -25,12 +25,17 @@ router.get(
     console.log("Token IS :", res.req.user);
     const tokens = res.req.user;
 
+    // I redirect to the following Link which is Wrong
+
     res.redirect(
-      "http://localhost:5000/Login?username=" +
-        res.req.user.username +
-        "&password=" +
-        res.req.user.password
+      `http://localhost:5000/Login?username=${res.req.user.username}&password=${res.req.user.password}`
     );
+    // res.redirect(
+    //   "http://localhost:5000/Login?username=" +
+    //     res.req.user.username +
+    //     "&password=" +
+    //     res.req.user.password
+    // );
 
     //res.redirect("http://localhost:5000/Main?tokens=" + tokens );
   }

@@ -106,7 +106,7 @@ const Login = () => {
 
   function goToRegister() {
     history.push("/Register");
- }
+  }
 
   return (
     <div className="login-container">
@@ -120,7 +120,7 @@ const Login = () => {
             onChange={handleChange}
             value={input.username}
           />
-          
+
           <InputField
             name="password"
             DataType="password"
@@ -130,16 +130,18 @@ const Login = () => {
             value={input.password}
           />
 
-        <button
-          onClick={handleClick}
-          type="submit"
-          className="login buttons btn btn-dark"
-        >
-          Login
-        </button>
+          <button
+            onClick={handleClick}
+            type="submit"
+            className="login buttons btn btn-dark"
+          >
+            Login
+          </button>
         </div>
       </form>
-      <span className="register" onClick={goToRegister}>Create a new account</span>
+      <span className="register" onClick={goToRegister}>
+        Create a new account
+      </span>
       <button
         className="loginbutton  btn btn-outline-dark btn-lg col-3"
         onClick={loginWithGoogle}

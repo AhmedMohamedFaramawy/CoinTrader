@@ -29,14 +29,30 @@ router.put("", async (req, res) => {
     category: result.category,
     tokensInCirculation,
     marketCap,
+    price: result.price,
   });
 
   await User.findOne({ username: username })
-    .then((record) => {
+    .then(async (record) => {
       console.log(record);
-      // must be current session user
-      record.BoughtCards.push(boughtCard);
-      record.save();
+      //must be current session user
+      if (record.balance >= result.price) {
+        console.log("record.balacne is:", record.balance);
+        console.log("result.price is:", result.price);
+        const newBalance = record.balance - result.price;
+        console.log("newBalance is:", newBalance);
+        await User.updateOne(
+          { username: username },
+          { $set: { balance: newBalance } }
+        );
+        record.BoughtCards.push(boughtCard);
+        record.save();
+      } else {
+        console.log(
+          "Not enough Balance your current balance is:",
+          record.balance
+        );
+      }
     })
     .catch((err) => {
       console.log("error in buy", err);

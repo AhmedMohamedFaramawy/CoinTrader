@@ -15,11 +15,13 @@ const cardSchema = mongoose.Schema({
   category: String,
   tokensInCirculation: Number,
   marketCap: Number,
+  price: Number,
 });
 
 const userSchema = mongoose.Schema({
   username: String,
   password: String,
+  balance: Number,
   createdCards: [cardSchema],
   googleId: String,
   hash1: String,

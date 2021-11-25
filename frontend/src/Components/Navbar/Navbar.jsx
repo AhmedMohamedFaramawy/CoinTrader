@@ -46,10 +46,16 @@ const Navbar = () => {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/Profile">
+                  Profile
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/Downloads">
                   Download
                 </a>
               </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="/ResetPassword">
                   Reset Password
