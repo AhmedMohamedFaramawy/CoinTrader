@@ -21,7 +21,7 @@ const BuyTokens = (props) => {
         },
       })
       .then((response) => {
-        console.log("response is:", response);
+        console.log("response is:", response.data);
         console.log("Filtered cards in buy token are:", filteredCards);
         setFilteredCards(response.data);
       })

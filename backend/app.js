@@ -96,6 +96,8 @@ app.use("/UserTokens", require("./routes/UserTokensRoute"));
 app.use("/FilterUserTokens", require("./routes/FilterUserTokensRoute"));
 app.use("/BoughtTokens", require("./routes/BoughtTokensRoute"));
 app.use("/BuyTokens", require("./routes/BuyTokensRoute"));
+app.use("/SellTokens", require("./routes/SellTokensRoute"));
+
 //app.use("/getUserInfo", require("./routes/GetUserInfo"));
 
 app.listen(5000, () => {

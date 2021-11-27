@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 
-router.put("", async (req, res) => {
+router.put("", authenticateToken, async (req, res) => {
   const username = req.body.users;
   const id = req.body.id;
 
